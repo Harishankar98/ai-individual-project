@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Research Paper Summarizer & Extractor</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">
+                    <span class="logo-icon">📄</span>
+                    AI Research Paper Analyzer
+                </h1>
+                <p class="tagline">Intelligent PDF Processing, Summarization & Extraction</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Upload Section -->
+            <section class="upload-section">
+                <div class="card">
+                    <h2>Upload Research Paper</h2>
+                    <div class="upload-area" id="uploadArea">
+                        <input type="file" id="fileInput" accept=".pdf" hidden>
+                        <div class="upload-icon">📤</div>
+                        <p class="upload-text">Drag & drop your PDF file here or <span class="upload-link" id="uploadLink">browse</span></p>
+                        <p class="upload-hint">Supports PDF files up to 10MB</p>
+                    </div>
+                    <div class="upload-progress" id="uploadProgress" style="display: none;">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <p class="progress-text" id="progressText">Processing...</p>
+                    </div>
+                    <button class="btn btn-primary" id="uploadBtn" style="display: none;">
+                        Upload & Process
+                    </button>
+                </div>
+            </section>
+
+            <!-- Search Section -->
+            <section class="search-section">
+                <div class="card">
+                    <h2>Semantic Search</h2>
+                    <div class="search-container">
+                        <input type="text" id="searchInput" class="search-input" placeholder="Search across all papers...">
+                        <button class="btn btn-secondary" id="searchBtn">Search</button>
+                    </div>
+                    <div id="searchResults" class="search-results"></div>
+                </div>
+            </section>
+
+            <!-- Papers List -->
+            <section class="papers-section">
+                <div class="card">
+                    <div class="section-header">
+                        <h2>Uploaded Papers</h2>
+                        <button class="btn btn-small" id="refreshBtn">Refresh</button>
+                    </div>
+                    <div id="papersList" class="papers-list"></div>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <div class="card">
+                    <div class="section-header">
+                        <h2>Paper Analysis Results</h2>
+                        <button class="btn btn-small" id="closeResultsBtn">Close</button>
+                    </div>
+                    <div id="resultsContent" class="results-content"></div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>AI Research Paper Summarizer & Extractor | Powered by Django & AI</p>
+        </footer>
+    </div>
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
+
