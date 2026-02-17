@@ -1,0 +1,5 @@
+{
+  "name": "AI Research Insight Hub",
+  "description": "A high-performance platform for PDF text extraction, AI-powered summarization, insight extraction, and semantic search over academic papers using Gemini models.",
+  "requestFramePermissions": []
+}
